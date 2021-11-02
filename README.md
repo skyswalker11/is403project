@@ -20,3 +20,6 @@ python manage.py runserver
 
 Create Super-User:
 python manage.py createsuperuser
+
+Migrate:
+python manage.py migrate
