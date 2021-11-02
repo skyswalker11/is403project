@@ -13,7 +13,7 @@ Mac:
 python3 -m django startproject {Name_here}
 
 App Setup:
-django-admin startproject {Directory}
+django-admin startapp {Directory}
 
 Run:
 python manage.py runserver
