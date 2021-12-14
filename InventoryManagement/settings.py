@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'InventoryManagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'finalproject',
+        'NAME': '403Project',
         'USER' : 'postgres',
         'PASSWORD' : 'admin',
         'HOST' : 'localhost',

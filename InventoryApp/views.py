@@ -61,4 +61,7 @@ def createPageView(request) :
 
         instance.save()
 
-    return inventoryPageView(request)
+        return inventoryPageView(request)
+
+    else :
+        return render(request, 'inventorypages/create.html')
