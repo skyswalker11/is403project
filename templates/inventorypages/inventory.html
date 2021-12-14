@@ -4,20 +4,20 @@
 {% endcomment %}
 {% block content %}
 
-{% comment %} <div class="search_header search">
-    <form class="form-inline my-2 my-lg-0" class="search" method="post" action="{% url 'prescriber' %}">
+<div class="search_header search">
+    <form class="form-inline my-2 my-lg-0" class="search" method="post" action="{% url 'inventory' %}">
         {% csrf_token %}
-        <input class="form-control mr-sm-2 search" id="search" name="search" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-primary my-2 my-sm-0 space" type="submit">Search</button>
+        <input class="form-control mr-sm-2 search" id="search" name="search" type="search" placeholder="Buscar..." aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0 space" type="submit">Buscar</button>
 
-        <label class="space" for="state">State/Territory:</label>
+        {% comment %} <label class="space" for="state">State/Territory:</label>
         <select class="space" name="state" id="state">
             <option value="all" selected>All</option>
             {% for state in states %}
             <option value={{state.state}}>{{state.state}}</option>
             {% endfor %}
-        </select> 
-
+        </select>  {% endcomment %}
+{% comment %} 
         <!-- Radio button group-->
         <input class="space" type="radio" id="all" name="filter" value="all" checked>
         <label class="space" for="all">All genders</label><br>
@@ -30,10 +30,10 @@
 </div> {% endcomment %}
 
 <div class="card_grid">
-    {% for prescriber in prescribers %}
+    {% for product in products %}
         <div class="card">
             <div class="card_container">
-                <h4 class="card_title"><a href="{% url 'productdetails' productID=inventory.productID %}"><b>{{prescriber}}</b></a></h4>
+                <h4 class="card_title"><a href="{% url 'productdetails' productID=inventory.productID %}"><b>{{inventory}}</b></a></h4>
                 <p class="card_paragaph"><b>Codigo</b> {{inventory.codigo}}</p>
                 <p class="card_paragaph"><b>Ubicacion</b> {{inventory.ubicacion}}</p>
                 <p class="card_paragaph"><b>Stock</b> {{inventory.stock}}</p>
