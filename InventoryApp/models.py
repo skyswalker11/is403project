@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 # Create your models here.
 
 class Inventory(models.Model) :
-    productID = models.AutoField(primary_key=True)
     codigo = models.CharField(max_length = 30)
     marca = models.CharField(max_length = 30)
     descripcion = models.CharField(max_length = 100)
@@ -15,5 +14,9 @@ class Inventory(models.Model) :
     soles = models.DecimalField(max_digits = 10, decimal_places = 2)
     valor_del_stock = models.DecimalField(max_digits = 9, decimal_places = 2)
     tipo_de_cambio = models.DecimalField(max_digits = 5, decimal_places = 2)
+    product_id = models.AutoField(primary_key=True)
     def __str__(self):
         return (self.descripcion)
+
+    class Meta : 
+        db_table = "inventory"
