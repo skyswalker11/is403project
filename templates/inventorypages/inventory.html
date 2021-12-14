@@ -1,9 +1,45 @@
 {% extends 'base.html' %}
 {% load static %}
+{% comment %} 
+{% endcomment %}
 {% block content %}
-        
-            <div class="container">              
-                <h1>Welcome to </h1>
+
+{% comment %} <div class="search_header search">
+    <form class="form-inline my-2 my-lg-0" class="search" method="post" action="{% url 'prescriber' %}">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2 search" id="search" name="search" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0 space" type="submit">Search</button>
+
+        <label class="space" for="state">State/Territory:</label>
+        <select class="space" name="state" id="state">
+            <option value="all" selected>All</option>
+            {% for state in states %}
+            <option value={{state.state}}>{{state.state}}</option>
+            {% endfor %}
+        </select> 
+
+        <!-- Radio button group-->
+        <input class="space" type="radio" id="all" name="filter" value="all" checked>
+        <label class="space" for="all">All genders</label><br>
+        <input class= "space" type="radio" id="female" name="filter" value="female">
+        <label class="space" for="female">Female</label><br>
+        <input class="space" type="radio" id="male" name="filter" value="male">
+        <label class="space" for="male">Male</label><br>
+    </form>
+    <button type="button" class="btn btn-primary my-2 my-sm-0 create_button" onclick="window.location.href='{% url 'create_product' %}'">Añadir Nuevo Producto</button>  
+</div> {% endcomment %}
+
+<div class="card_grid">
+    {% for prescriber in prescribers %}
+        <div class="card">
+            <div class="card_container">
+                <h4 class="card_title"><a href="{% url 'inventory_details' productID=inventory.productID %}"><b>{{prescriber}}</b></a></h4>
+                <p class="card_paragaph"><b>Codigo</b> {{inventory.codigo}}</p>
+                <p class="card_paragaph"><b>Ubicacion</b> {{inventory.ubicacion}}</p>
+                <p class="card_paragaph"><b>Stock</b> {{inventory.stock}}</p>
             </div>
-        
+        </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
