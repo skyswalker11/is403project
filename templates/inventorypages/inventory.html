@@ -7,9 +7,9 @@
 <div class="search_header search" style="float-top=10%">
     <form class="form-inline my-2 my-lg-0" class="search" method="post" action="{% url 'inventory' %}">
         {% csrf_token %}
-        <input class="form-control mr-sm-2 search" id="search" name="search" type="search" placeholder="Buscar..." aria-label="Search">
-        <button class="btn btn-primary my-2 my-sm-0 space" type="submit">Buscar</button>
-        <button type="button" class="btn btn-primary my-2 my-sm-0 create_button" onclick="window.location.href='{% url 'create' %}'">Añadir Nuevo Producto</button> 
+        <button type="button" class="btn btn-primary my-2 my-sm-0 create_button" onclick="window.location.href='{% url 'create' %}'">
+            Añadir Nuevo Producto    
+        </button> 
 </div> 
 
 
