@@ -33,7 +33,7 @@
     {% for prescriber in prescribers %}
         <div class="card">
             <div class="card_container">
-                <h4 class="card_title"><a href="{% url 'inventory_details' productID=inventory.productID %}"><b>{{prescriber}}</b></a></h4>
+                <h4 class="card_title"><a href="{% url 'productdetails' productID=inventory.productID %}"><b>{{prescriber}}</b></a></h4>
                 <p class="card_paragaph"><b>Codigo</b> {{inventory.codigo}}</p>
                 <p class="card_paragaph"><b>Ubicacion</b> {{inventory.ubicacion}}</p>
                 <p class="card_paragaph"><b>Stock</b> {{inventory.stock}}</p>
