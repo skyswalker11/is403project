@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'InventoryManagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '403Project',
+        'NAME': 'pollsdb',
         'USER' : 'myadmin@is403finalproject',
         'PASSWORD' : 'Postgres123',
         'HOST' : 'is403finalproject.postgres.database.azure.com',
