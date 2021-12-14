@@ -9,11 +9,23 @@ def indexPageView(request) :
 
 # View for displaying the inventory page 
 def inventoryPageView(request) : 
-    return render(request, 'inventorypages/inventory.html')
+    products = Inventory.objects.all()
+
+    context = {
+        "products": products
+    }
+
+    return render(request, 'inventorypages/inventory.html', context)
 
 # View for displaying product details
-def productDetailsPageView(request) :
-    return render(request, 'inventorypages/productdetails.html')
+def productDetailsPageView(request, productid) :
+    product = Inventory.objects.get(productid = productid)
+
+    context = {
+        "product": product
+    }
+
+    return render(request, 'inventorypages/productdetails.html', context)
 
 # View for editing or deleting inventory page 
 def editPageView(request) : 
