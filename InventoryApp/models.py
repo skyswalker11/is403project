@@ -14,9 +14,19 @@ class Inventory(models.Model) :
     soles = models.DecimalField(max_digits = 10, decimal_places = 2)
     valor_del_stock = models.DecimalField(max_digits = 9, decimal_places = 2)
     tipo_de_cambio = models.DecimalField(max_digits = 5, decimal_places = 2)
+<<<<<<< HEAD
     product_id = models.AutoField(primary_key=True)
     def __str__(self):
         return (self.descripcion)
 
     class Meta : 
         db_table = "inventory"
+=======
+    product_id = models.IntegerField(primary_key=True)
+    def __str__(self):
+        return (self.descripcion)
+
+    class Meta:
+        db_table = "inventory"
+    
+>>>>>>> 27180784898f734f0a8ed70cdda8eca89f8f33c2
