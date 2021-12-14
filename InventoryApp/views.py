@@ -18,8 +18,8 @@ def inventoryPageView(request) :
     return render(request, 'inventorypages/inventory.html', context)
 
 # View for displaying product details
-def productDetailsPageView(request, productID) :
-    product = Inventory.objects.get(productID = productID)
+def productDetailsPageView(request, product_id) :
+    product = Inventory.objects.get(product_id = product_id)
 
     context = {
         "product": product
@@ -30,8 +30,8 @@ def productDetailsPageView(request, productID) :
 # View for editing or deleting inventory page 
 def editPageView(request) : 
     if request.method == 'POST' :
-        productID = request.POST['productID']
-        product = Inventory.objects.get(productID=productID)
+        product_id = request.POST['product_id']
+        product = Inventory.objects.get(product_id=product_id)
         
         context = {
             "product": product
