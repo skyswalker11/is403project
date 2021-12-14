@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container">
-                <div class="masthead-subheading">Welcome to TripMe Travel!</div>
-                <div class="masthead-heading text-uppercase">We make the world a little smaller</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'inventory' %}">See Inventory</a>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'create' %}">create</a>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'edit' %}">edit</a>
-            </div>
-        </header>
+<html>
+    <body> 
+        <div class="position-relative overflow-hidden text-center bg-light">
+            <div class="col-md-5 p-lg-5 mx-auto mg-5"> 
+                <img src="static/img/header-img.jpeg" alt="fields" style="width:100%;">
+                <h1 class="display-4 font-weight-normal">Inka Repuestos y Servicios</h1>
+                <p class="lead font-weight-normal"> 
+                Welcome to your inventory management website</p> 
+                <button type="button" class="btn btn-primary my-2 my-sm-0" onclick="window.location.href='{% url 'inventory' %}'">Inventario</button>   
+            </div> 
+
+        </div>
+    </body>
+</html> 
 {% endblock %}
