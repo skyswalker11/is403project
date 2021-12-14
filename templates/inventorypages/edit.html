@@ -3,8 +3,11 @@
 {% block content %}
     <h1>Página para actualizar productos</h1>
 
-    <form action="{% url 'edit' %}" method="post" class="search">
+    <form action="{% url 'put' %}" method="post" class="search">
         {% csrf_token %}
+        <label for="product_id"><b>ID:</b></label>
+        <input type="text" id="product_id" name="product_id" value="{{inventory.product_id}}"><br>
+
         <label for="codigo"><b>Código:</b></label>
         <input type="text" id="codigo" name="codigo" value="{{inventory.codigo}}"><br>
 

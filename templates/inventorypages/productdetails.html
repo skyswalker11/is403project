@@ -21,11 +21,11 @@
 
         <div style="display:flex;">
 
-            {% comment %} <form method="post" action ="{% url 'productdetails' product_id=inventory.product_id %}">
-                {% csrf_token %}
-                <input type="hidden" value="{{inventory.product_id}}" name="product_id">
-                <button type="submit" class="btn btn-primary my-2 my-sm-0 create_button">Editar Detalles</button>
-            </form><br> {% endcomment %}
+        <form method = "POST" action ="{% url 'edit' product_id=inventory.product_id %}">
+            {% csrf_token %}
+            <input type="hidden" value="{{inventory.product_id}}" name="product_id">
+            <button type="submit" class="btn btn-primary my-2 my-sm-0 create_button">Editar Detalles</button>
+        </form><br>
 
             {% comment %} <form method="post" action ="{% url 'delete_inventory' %}">
                 {% csrf_token %}
