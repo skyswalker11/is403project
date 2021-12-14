@@ -22,7 +22,7 @@ def productDetailsPageView(request, product_id) :
     product = Inventory.objects.get(product_id = product_id)
 
     context = {
-        "product": product
+        "inventory": product
     }
 
     return render(request, 'inventorypages/productdetails.html', context)
