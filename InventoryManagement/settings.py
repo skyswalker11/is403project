@@ -85,7 +85,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': '403Project',
-        'USER' : 'myadmin',
+        'USER' : 'myadmin@is403finalproject',
         'PASSWORD' : 'Postgres123',
         'HOST' : 'is403finalproject.postgres.database.azure.com',
     }
