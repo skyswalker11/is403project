@@ -28,7 +28,7 @@ def productDetailsPageView(request, product_id) :
     return render(request, 'inventorypages/productdetails.html', context)
 
 # View for editing or deleting inventory page 
-def editPageView(request) : 
+def editPageView(request, product_id) : 
     if request.method == 'POST' :
         product_id = request.POST['product_id']
         product = Inventory.objects.get(product_id=product_id)

@@ -1,7 +1,52 @@
 {% extends 'base.html' %}
 {% load static %}
+{% comment %} 
+{% endcomment %}
 {% block content %}
+
+    <div class="detail_header">
         
-<h1>Product Details page</h1>
-        
+        <h4 class="card_title"><a href="#"><b>{{inventory}}</b></a></h4>
+        <p class="card_paragaph"><b>ID:</b> {{inventory.product_id}}</p>
+        <p class="card_paragaph"><b>Codigo:</b> {{inventory.codigo}}</p>
+        <p class="card_paragaph"><b>Marca:</b> {{inventory.marca}}</p>
+        <p class="card_paragaph"><b>Descripcion:</b> {{inventory.descripcion}}</p>
+        <p class="card_paragaph"><b>Ubicacion:</b> {{inventory.ubicacion}}</p>
+        <p class="card_paragaph"><b>Unidad:</b> {{inventory.unidad}}</p>
+        <p class="card_paragaph"><b>Stock:</b> {{inventory.stock}}</p>
+        <p class="card_paragaph"><b>Dolares:</b> {{inventory.dolares}}</p>
+        <p class="card_paragaph"><b>Soles:</b> {{inventory.soles}}</p>
+        <p class="card_paragaph"><b>Valor Del Stock:</b> {{inventory.valor_del_stock}}</p>
+        <p class="card_paragaph"><b>Tipo de Cambio:</b> {{inventory.tipo_de_cambio}}</p>
+
+        <div style="display:flex;">
+
+            <form method="post" action ="{% url 'edit' %}">
+                {% csrf_token %}
+                <input type="hidden" value="{{inventory.product_id}}" name="product_id">
+                <button type="submit" class="btn btn-primary my-2 my-sm-0 create_button">Editar Detalles</button>
+            </form><br>
+
+            <form method="post" action ="{% url 'delete_inventory' %}">
+                {% csrf_token %}
+                <input type="hidden" value="{{inventory.product_id}}" name="product_id">
+                <button type="submit" class="btn btn-primary my-2 my-sm-0 create_button">Borrar Producto</button>
+            </form>
+        </div>
+          
+    </div>
+
+
+    <br>
+    <h4><b>Top Prescriptions:</b></h4>
+    <div class="card_grid">
+        {% for inventory in products %}
+            <div class="card">
+                <div class="card_container">
+                    <h4 class="card_title"><a href="{% url 'productdetails' product_id=inventory.product_id %}"><b>{{inventory}}</b></a></h4>
+                    <p><b>Stock: </b>{{inventory.stock}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
