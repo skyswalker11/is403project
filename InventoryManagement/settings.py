@@ -85,9 +85,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': '403Project',
-        'USER' : 'postgres',
-        'PASSWORD' : 'bionicle25',
-        'HOST' : 'localhost',
+        'USER' : 'myadmin',
+        'PASSWORD' : 'Postgres123',
+        'HOST' : 'is403finalproject.postgres.database.azure.com',
     }
 }
 db_from_env = dj_database_url.config(conn_max_age=600)
