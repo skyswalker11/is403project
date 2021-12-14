@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 # Create your models here.
 
 class Inventory(models.Model) :
-    productid = models.IntegerField()
+    productID = models.IntegerField()
     codigo = models.CharField(max_length = 30)
     marca = models.CharField(max_length = 30)
     descripcion = models.CharField(max_length = 100)
