@@ -45,6 +45,7 @@ def editPageView(request, product_id) :
 # View for creating new inventory page
 def createPageView(request) : 
     if request.method == 'POST' :
+        product_id = request.POST['product_id']
         codigo = request.POST['codigo']
         marca = request.POST['marca']
         descripcion = request.POST['descripcion']
