@@ -57,7 +57,7 @@ def createPageView(request) :
         valor_del_stock = request.POST['valor_del_stock']
         tipo_de_cambio = request.POST['tipo_de_cambio']
 
-        instance = Inventory(codigo=codigo, marca=marca, descripcion=descripcion, ubicacion=ubicacion, unidad=unidad, \
+        instance = Inventory(product_id=product_id, codigo=codigo, marca=marca, descripcion=descripcion, ubicacion=ubicacion, unidad=unidad, \
             stock=stock, dolares=dolares, soles=soles, valor_del_stock=valor_del_stock, tipo_de_cambio=tipo_de_cambio)
 
         instance.save()
