@@ -1,14 +1,41 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-        
-            <div class="container">              
-                  <!--create input form with POST method to the server for vehicle information-->
-            <fieldset>
-            <form action="/addinventory" method="POST">
-               
-            </form>
-          </fieldset>
-            </div>
+
+<h1>Página para añadir productos</h1>
+
+<form action="{% url 'create' %}" method="post" class="search">
+  <label for="codigo"><b>Código:</b></label>
+  <input type="text" id="codigo" name="codigo"><br>
+
+  <label for="marca"><b>Marca:</b></label>
+  <input type="text" id="marca" name="marca"><br>
+
+  <label for="descripcion"><b>Descripción:</b></label>
+  <input type="text" id="descripcion" name="descripcion"><br>
+  
+  <label for="ubicacion"><b>Ubicación:</b></label>
+  <input type="text" id="ubicacion" name="ubicacion"><br>
+
+  <label for="unidad"><b>Unidad:</b></label>
+  <input type="text" id="unidad" name="unidad"><br>
+
+  <label for="stock"><b>Stock:</b></label>
+  <input type="number" id="stock" name="stock"><br>
+  
+  <label for="dolares"><b>Dólares:</b></label>
+  <input type="number" id="dolares" name="dolares"><br>
+
+  <label for="soles"><b>Soles:</b></label>
+  <input type="number" id="soles" name="soles"><br>
+
+  <label for="valor_del_stock"><b>Valor del stock:</b></label>
+  <input type="number" id="valor_del_stock" name="valor_del_stock"><br>
+
+  <label for="tipo_de_cambio"><b>Tipo de cambio:</b></label>
+  <input type="number" id="tipo_de_cambio" name="tipo_de_cambio"><br>
+
+  <button class="btn btn-primary my-2 my-sm-0 space" type="submit">Añadir producto</button>
+</form>  
         
 {% endblock %}
