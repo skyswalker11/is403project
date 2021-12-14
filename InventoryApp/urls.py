@@ -6,5 +6,5 @@ urlpatterns = [
     path("inventory/", inventoryPageView, name = "inventory"),
     path("edit/", editPageView, name = "edit"),
     path("create/", createPageView, name = "create"),
-    path("productdetails/<int:productid>", productDetailsPageView, name = "productdetails")
+    path("productdetails/<int:productID>", productDetailsPageView, name = "productdetails")
 ]

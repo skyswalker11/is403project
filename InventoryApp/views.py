@@ -18,8 +18,8 @@ def inventoryPageView(request) :
     return render(request, 'inventorypages/inventory.html', context)
 
 # View for displaying product details
-def productDetailsPageView(request, productid) :
-    product = Inventory.objects.get(productid = productid)
+def productDetailsPageView(request, productID) :
+    product = Inventory.objects.get(productID = productID)
 
     context = {
         "product": product
