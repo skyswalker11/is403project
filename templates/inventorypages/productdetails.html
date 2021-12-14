@@ -20,18 +20,17 @@
         <p class="card_paragaph"><b>Tipo de Cambio:</b> {{inventory.tipo_de_cambio}}</p>
 
         <div style="display:flex;">
+            <form method = "POST" action ="{% url 'edit' product_id=inventory.product_id %}">
+                {% csrf_token %}
+                <input type="hidden" value="{{inventory.product_id}}" name="product_id">
+                <button type="submit" class="btn btn-primary my-2 my-sm-0 create_button">Editar Detalles</button>
+            </form><br>
 
-        <form method = "POST" action ="{% url 'edit' product_id=inventory.product_id %}">
-            {% csrf_token %}
-            <input type="hidden" value="{{inventory.product_id}}" name="product_id">
-            <button type="submit" class="btn btn-primary my-2 my-sm-0 create_button">Editar Detalles</button>
-        </form><br>
-
-            {% comment %} <form method="post" action ="{% url 'delete_inventory' %}">
+            <form method="post" action ="{% url 'delete' %}">
                 {% csrf_token %}
                 <input type="hidden" value="{{inventory.product_id}}" name="product_id">
                 <button type="submit" class="btn btn-primary my-2 my-sm-0 create_button">Borrar Producto</button>
-            </form>  {% endcomment %}
+            </form>
         </div>        
     </div>
 {% endblock %}

@@ -67,6 +67,15 @@ def putPageView(request) :
     else :
         return inventoryPageView(request)
 
+# View for deleting products from inventory
+def deletePageView(request) :
+    if request.method == 'POST' : 
+        product_id = request.POST['product_id']
+        instance = Inventory.objects.get(product_id=product_id)
+        instance.delete()
+
+    return inventoryPageView(request)
+
 # View for creating new inventory page
 def createPageView(request) : 
     if request.method == 'POST' :
